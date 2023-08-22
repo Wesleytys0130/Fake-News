@@ -24,8 +24,36 @@ def index():
     # print("引薦網址",request.headers.get("referrer"))
     return render_template("index.html")
 
-@app.route("/Q1",methods = ["POST"] )
+@app.route("/Q-ALL",methods = ["POST"] )
 def getdata():
+    user = request.form['user']
+    session["user"] = user
+    print(session["user"])
+
+    return render_template("Q-ALL.html")
+
+@app.route("/end-ALL",methods = ["POST"] )
+def endALL():
+    Q1_ans = request.form['Q1']
+    Q2_ans = request.form['Q2']
+    Q3_ans = request.form['Q3']
+    Q4_ans = request.form['Q4']
+    Q5_ans = request.form['Q5']
+    Q6_ans = request.form['Q6']
+    session["Q1"] = Q1_ans
+    session["Q2"] = Q2_ans
+    session["Q3"] = Q3_ans
+    session["Q4"] = Q4_ans
+    session["Q5"] = Q5_ans
+    session["Q6"] = Q6_ans
+    all_ans = [session[f'Q{i}']for i in range(1,7)]
+    user = session["user"]
+
+    return render_template("end.html",data = all_ans, usr = session["user"] )
+
+
+@app.route("/Q1",methods = ["POST"])
+def Q1():
     user = request.form['user']
     session["user"] = user
     print(session["user"])
@@ -79,4 +107,4 @@ def end():
     return render_template("end.html",data = all_ans, usr = session["user"] )
 
 
-app.run()
+app.run(port=5001)

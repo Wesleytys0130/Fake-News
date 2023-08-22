@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>測測你的社群媒體 BGM</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/ver2.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/css/ver2.css"/> 
+
+    <script>
+        function scrollToAnchor(anchorId, offset) {
+        const anchorElement = document.getElementById(anchorId);
+        if (anchorElement) {
+            const topOffset = offset || 0; // 设置默认偏移为0
+            const topPosition = anchorElement.getBoundingClientRect().top + window.scrollY - topOffset;
+            window.scrollTo({ top: topPosition, behavior: 'smooth' });//'auto'
+            }
+        }
+    </script>   
+    
+
+</head>
+    <body>
+        <nav>
+			<div class="nav-left">
+				<img src="../public/img-ver2/logo.png" class="logo">
+				<ul>
+					<li>
+						<img src="../public/img-ver2/notification.png">
+					</li>
+					<li>
+						<img src="../public/img-ver2/inbox.png">
+					</li>
+					<li>
+						<img src="../public/img-ver2/video.png">
+					</li>
+				</ul>
+			</div>
+			<div class="nav-right">
+				<div class="search-box">
+					<img src="../public/img-ver2/search.png">
+					<input type="text" placeholder="搜尋">
+				</div>
+				<div class="nav-user-icon online" onclick="settingsMenuToggle();">
+					<img src="../public/img-post/6.svg">
+				</div>
+			</div>
+
+			<!-- <div class="settings-menu">
+				<div id="dark-btn">
+					<span></span>
+				</div>
+				<div class="settings-menu-inner">
+					<div class="user-profile">
+						<img src="../public/img-ver2/profile-pic.png">
+						<div>
+							<p>John Nicholson</p>
+							<a href="#">See Your Profile</a>
+						</div>
+					</div>
+					<hr>
+					<div class="user-profile">
+						<img src="../public/img-ver2/feedback.png">
+						<div>
+							<p>Give Feedback</p>
+							<a href="#">Help us to improve the new design</a>
+						</div>
+					</div>
+					<hr>
+
+					<div class="settings-links">
+						<img src="../public/img-ver2/setting.png" class="settings-icon">
+						<a href="#">Settings & Privacy</a>
+						<img src="../public/img-ver2/arrow.png" width="10px">
+					</div>
+					<div class="settings-links">
+						<img src="../public/img-ver2/help.png" class="settings-icon">
+						<a href="#">Help & Support</a>
+						<img src="../public/img-ver2/arrow.png" width="10px">
+					</div>
+					<div class="settings-links">
+						<img src="../public/img-ver2/display.png" class="settings-icon">
+						<a href="#">Display & Accessibility</a>
+						<img src="../public/img-ver2/arrow.png" width="10px">
+					</div>
+					<div class="settings-links">
+						<img src="../public/img-ver2/logout.png" class="settings-icon">
+						<a href="#">Logout</a>
+						<img src="../public/img-ver2/arrow.png" width="10px">
+					</div>
+				</div>
+			</div> -->
+		</nav>
+
+        <div class="container">
+			<div class="left-sidebar">
+				<div class="imp-links">
+					<a href="#">
+						<img src="../public/img-ver2/friends.png">
+						朋友
+					</a>
+					<a href="#">
+						<img src="../public/img-ver2/group.png">
+						社團
+					</a>
+					<a href="#">
+						<img src="../public/img-ver2/watch.png">
+						影片
+					</a>
+                    <a href="#">
+						<img src="../public/img-ver2/marketplace.png">
+						Marketplace
+					</a>
+                    <a href="#">
+						<img src="../public/img-ver2/news.png">
+						動態消息
+					</a>
+					<a href="#">
+						顯示更多
+					</a>
+				</div>
+				<div class="shortcut-links">
+					<p>你的捷徑</p>
+					<a href="#">
+						<img src="../public/img-post/whistleblower-house.svg">
+						爆料公社
+					</a>
+					<a href="#">
+						<img src="../public/img-post/potato-map.svg">
+						我是台灣人
+					</a>
+					<a href="#">
+						<img src="../public/img-post/sidewalk.svg">
+						路上觀察學院
+					</a>
+					<a href="#">
+						<img src="../public/img-post/hypermarket.svg">
+						好市多商品經驗老實說
+					</a>
+				</div>
+			</div>
+			<div class="main-content">
+				<!-- <div class="story-gallery">
+					<div class="story story1">
+						<img src="../public/img-ver2/upload.png">
+						<p>Post Story</p>
+					</div>
+					<div class="story story2">
+						<img src="../public/img-ver2/member-1.png">
+						<p>Alison</p>
+					</div>
+					<div class="story story3">
+						<img src="../public/img-ver2/member-2.png">
+						<p>Jackson</p>
+					</div>
+					<div class="story story4">
+						<img src="../public/img-ver2/member-3.png">
+						<p>Samona</p>
+					</div>
+					<div class="story story5">
+						<img src="../public/img-ver2/member-4.png">
+						<p>John</p>
+					</div>
+				</div> -->
+				<!-- <div class="write-post-container">
+					<div class="user-profile">
+						<img src="../public/img-ver2/profile-pic.png">
+						<div>
+							<p>John Nicholson</p>
+							<small>
+								Public
+								<i class="fas fa fa-caret-down"></i>
+							</small>
+						</div>
+					</div>
+					<div class="post-input-container">
+						<textarea rows="3" placeholder="What's on your mind, John?"></textarea>
+						<div class="add-post-links">
+							<a href="#">
+								<img src="../public/img-ver2/live-video.png">
+								Live Video
+							</a>
+							<a href="#">
+								<img src="../public/img-ver2/photo.png">
+								Photo/Video
+							</a>
+							<a href="#">
+								<img src="../public/img-ver2/feeling.png">
+								Feeling/Activity
+							</a>
+						</div>
+					</div>
+				</div> -->
+                <form action= "/end-ALL" method="POST">
+                    <div class="post-container">
+                        <div class="post-row">
+                            <div class="user-profile">
+                                <img src="../public/img-post/1.svg" alt="logo">
+                                <div>
+                                    <p>網紅</p>
+                                    <span>3月22日 下午01:40</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <i class="fa fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                        
+                        <p class="post-text">
+                            夭壽哦！蚵仔很大顆。<br>
+                            原來都加磷酸鹽。<br>
+                            難怪常看到斗六很多人中風。<br>
+                            因為磷酸鹽會讓血管鈣化 ！ <br>
+                            請大家注意。
+                        </p>
+
+                        <div class="post_options_v2">
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/like-blue.png">
+                                <div>讚</div>
+                            </div>
+                
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/comments.png">
+                                <div>留言</div>
+                            </div>
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/share.png">
+                                <div>分享</div>
+                            </div>
+                        </div>
+
+                        <div class="post_comments">
+                            <img src="../public/img-post/2.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">多數斗六人都會中風</div>
+                            <a class="custom-a-like">
+                                <input class="custom-radio-like" type="radio" name="Q1" value="A" required onclick="scrollToAnchor('Q2', 65)">
+                            </a>
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img-post/3.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">所有的大顆蚵仔都會加磷酸鹽</div>
+                            <a class="custom-a-like">
+                                <input class="custom-radio-like" type="radio" name="Q1" value="B" onclick="scrollToAnchor('Q2', 65)">
+                            </a>
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img-post/4.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">磷酸鹽攝取過量可能會造成血管鈣化</div>
+                            <a class="custom-a-like">
+                                <input class="custom-radio-like" type="radio" name="Q1" value="C" onclick="scrollToAnchor('Q2', 65)">
+                            </a>
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img-post/5.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">血管鈣化就一定會中風</div>
+                            <a class="custom-a-like">
+                                <input class="custom-radio-like" type="radio" name="Q1" value="D" onclick="scrollToAnchor('Q2', 65)"></a>
+                            </a>
+                        </div>
+                    </div >
+
+                
+                    <div class="post-container" id="Q2">
+                        <div class="post-row">
+                            <div class="user-profile">
+                                <img src="../public/img-post/1.svg" alt="logo">
+                                <div>
+                                    <p>網紅</p>
+                                    <span>4月12日 下午06:20</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <i class="fa fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                        
+                        <p class="post-text">
+                            因為台灣防禦法，美國將增加駐台美軍至5萬人!
+                        </p>
+
+                        <div class="post_options_v2">
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/like-blue.png">
+                                <div>讚</div>
+                            </div>
+                
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/comments.png">
+                                <div>留言</div>
+                            </div>
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/share.png">
+                                <div>分享</div>
+                            </div>
+                        </div>
+
+                        <div class="post_comments">
+                            <img src="../public/img-post/2.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">美國會因為台灣的國內法，增加駐台美軍</div>
+                            <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q2" value="A" required onclick="scrollToAnchor('Q3', 65)"></a>
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img-post/3.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">美國怎麼可能因為台灣國內法增加駐軍</div>
+                            <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q2" value="B" onclick="scrollToAnchor('Q3', 65)"></a>
+                        </div>
+				    </div>
+
+
+                    <div class="post-container" id="Q3">
+                        <div class="post-row">
+                            <div class="user-profile">
+                                <img src="../public/img-post/1.svg" alt="logo">
+                                <div>
+                                    <p>網紅</p>
+                                    <span>6月7日 下午02:34</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <i class="fa fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                        
+                        <p class="post-text">
+                            台灣花6億美元向美國買4架型號MQ-9B無人機，<br>
+                            西方媒體爆出MQ-9B無人機售價3千萬美元，<br>
+                            美賣台灣同型號竟為1.5億美元，<br>
+                            花費五倍價錢!!
+                        </p>
+
+                        <div class="post_options_v2">
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/like-blue.png">
+                                <div>讚</div>
+                            </div>
+                
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/comments.png">
+                                <div>留言</div>
+                            </div>
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/share.png">
+                                <div>分享</div>
+                            </div>
+                        </div>
+
+                        <div class="post_comments">
+                            <img src="../public/img-post/2.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">我們以低於五倍的價格買到無人機！</div>
+                            <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q3" value="A" required onclick="scrollToAnchor('Q4', 65)"></a>
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img-post/3.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">美國竟然用高於市價的價格賣台灣戰機！</div>
+                            <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q3" value="B" onclick="scrollToAnchor('Q4', 65)"></a>
+                        </div>
+                    </div>
+
+                    <div class="post-container" id="Q4">
+                        <div class="post-row">
+                            <div class="user-profile">
+                                <img src="../public/img-post/1.svg" alt="logo">
+                                <div>
+                                    <p>網紅</p>
+                                    <span>10月27日 下午03:49</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <i class="fa fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                        
+                        <p class="post-text">
+                            聯合國及世界衛生組織和世界各國研究機構公布了許多新的研究成果，<br>
+                            我們據此列出10個長壽方法，簡單易學，大家一定要看一看！<br>
+                            1、唱歌 2、跑步 3、不要久坐 4、吃薑黃 5、減少攝取熱量<br>
+                            6、吃綠葉菜7、擁抱 8、吃花椰菜 9、睡眠質量 10、早睡 
+                        </p>
+
+                        <div class="post_options_v2">
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/like-blue.png">
+                                <div>讚</div>
+                            </div>
+                
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/comments.png">
+                                <div>留言</div>
+                            </div>
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/share.png">
+                                <div>分享</div>
+                            </div>
+                        </div>
+
+                        <div class="post_comments">
+                            <img src="../public/img-post/2.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">媒體真的提供很多好方法呢，實用！！</div>
+                            <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q4" value="A" required onclick="scrollToAnchor('Q5', 65)"></a>
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img-post/3.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">聯合國及世界衛生組織有在認真做研究欸，很棒。</div>
+                            <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q4" value="B" onclick="scrollToAnchor('Q5', 65)"></a>
+                        </div>
+                    </div>
+
+                    <div class="post-container" id ="Q5">
+                        <div class="post-row">
+                            <div class="user-profile">
+                                <img src="../public/img-post/1.svg" alt="logo">
+                                <div>
+                                    <p>網紅</p>
+                                    <span>1月24日 上午4:33</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <i class="fa fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                        
+                        <p class="post-text">
+                            大家看清楚了!<br>
+                            鄧長富和石靜文分別代表「華視文化」、<br>
+                            「天下雜誌」及「天下文化」出席兩岸媒體人峰會，<br>
+                            這些媒體已經被中國徹底收編，<br>
+                            是 100% 的統媒。<br>
+                        </p>
+
+                        <div class="post_options_v2">
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/like-blue.png">
+                                <div>讚</div>
+                            </div>
+                
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/comments.png">
+                                <div>留言</div>
+                            </div>
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/share.png">
+                                <div>分享</div>
+                            </div>
+                        </div>
+
+                        <div class="post_comments">
+                            <img src="../public/img-post/2.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">鄧長富曾是「華視文化」的董事長</div>
+                            <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q5" value="A" required onclick="scrollToAnchor('Q6', 65)"></a>
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img-post/3.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">石靜文曾是「天下雜誌」的顧問</div>
+                            <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q5" value="B" onclick="scrollToAnchor('Q6', 65)"></a>
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img-post/4.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">「華視文化」、「天下雜誌」及「天下文化」都是 100% 的統媒</div>
+                            <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q5" value="C" onclick="scrollToAnchor('Q6', 65)"></a>
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img-post/5.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">鄧長富跟石靜文出席了兩岸媒體人峰</div>
+                            <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q5" value="D" onclick="scrollToAnchor('Q6', 65)"></a>
+                        </div>
+                    </div>
+                    
+
+                    <div class="post-container" id="Q6">
+                        <div class="post-row">
+                            <div class="user-profile">
+                                <img src="../public/img-post/1.svg" alt="logo">
+                                <div>
+                                    <p>網紅</p>
+                                    <span>2月25日 下午08:42</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <i class="fa fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                        
+                        <p class="post-text">
+                            震驚！！！<br>
+                            台灣人為賺錢，<br>
+                            害人不淺，真的會造罪業！<br>
+                            某知名紅茶攤的原物料違法添加人工香料香豆素，<br>
+                            難怪台灣洗腎患者全球第一，<br>
+                            肝不好！癌症攀升！<br>
+                        </p>
+
+                        <div class="post_options_v2">
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/like-blue.png">
+                                <div>讚</div>
+                            </div>
+                
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/comments.png">
+                                <div>留言</div>
+                            </div>
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/share.png">
+                                <div>分享</div>
+                            </div>
+                        </div>
+
+                        <div class="post_comments">
+                            <img src="../public/img-post/2.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">食品添加人工香精很夭壽</div>
+                            <!-- <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q6" value="A" required> -->
+                            <button class="like-button" type = "submit" name="Q6" value="A"></button>
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img-post/3.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">紅茶添加香豆素會造罪業</div>
+                            <!-- <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q6" value="B" > -->
+                            <button class="like-button" type = "submit" name="Q6" value="B"></button>
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img-post/4.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">台灣洗腎患者為全球第一</div>
+                            <!-- <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q6" value="C" > -->
+                            <button class="like-button" type = "submit" name="Q6" value="C"></button>
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img-post/5.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">肝不好會比較容易得癌症</div>
+                            <!-- <a class="custom-a-like"><input class="custom-radio-like" type="radio" name="Q6" value="D" > -->
+                            <button class="like-button" type = "submit" name="Q6" value="D"></button>
+                        </div>
+                    </div>
+                    <button type="button" class="load-more-btn">顯示更多</button>
+
+                    <!-- <button  class="load-more-btn" type = "submit"></button> -->
+                    <!-- <input type="submit" value="提交"  class="load-more-btn"> -->
+                </form>
+            
+			</div>
+			<div class="right-sidebar">
+				<div class="sidebar-title">
+					<h4>活動</h4>
+					<a href="#">顯示更多</a>
+				</div>
+				<div class="event">
+					<div class="left-event">
+						<h3>18</h3>
+						<span>八月</span>
+					</div>
+					<div class="right-event">
+						<h4>河堤野餐日</h4>
+						<p>
+							<i class="fa fa-map-marker"></i>
+							河濱公園
+						</p>
+						<a href="#">更多資訊</a>
+					</div>
+				</div>
+				<div class="event">
+					<div class="left-event">
+						<h3>22</h3>
+						<span>十月</span>
+					</div>
+					<div class="right-event">
+						<h4>演唱會</h4>
+						<p>
+							<i class="fa fa-map-marker"></i>
+							台北小巨蛋
+						</p>
+						<a href="#">更多資訊</a>
+					</div>
+				</div>
+
+				<div class="sidebar-title">
+					<h4>廣告</h4>
+					<a href="#">隱藏廣告</a>
+				</div>
+				<img src="../public/img-post/a-women-drinking-coffee-in-the-office.svg" class="sidebar-ads">
+
+				<div class="sidebar-title">
+					<h4>聯絡人</h4>
+					<a href="#">隱藏聊天室</a>
+				</div>
+				<div class="online-list">
+					<div class="online">
+						<img src="../public/img-post/7.svg">
+					</div>
+					<p>陳雅婷</p>
+				</div>
+				<div class="online-list">
+					<div class="online">
+						<img src="../public/img-post/8.svg">
+					</div>
+					<p>李承恩</p>
+				</div>
+				<div class="online-list">
+					<div class="online">
+						<img src="../public/img-post/9.svg">
+					</div>
+					<p>林冠宇</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<p> 隱私政策  · 服務條款  · 廣告  · Ad Choices   · Cookie </p>
+		</div>
+    </body>
+</html>
+
+

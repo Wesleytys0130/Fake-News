@@ -42,6 +42,7 @@ body {
 	/* font-size: 12px; */
     font-size: clamp(1.4rem, 5 * (1vw + 1vh) / 2, 1.5rem);
 }
+
 .post-row{
 	margin-top:10px;
 	display: flex;
@@ -160,8 +161,9 @@ body {
     color:rgb(36, 36, 36);
 } */
 
+
 .post_img{
-    box-shadow: -0.5px 1px 5px 0.5px rgba(83, 83, 83, 0.52);
+    box-shadow: -0.5px 1px 5px 0.5px rgb(255, 255, 255);
     width: 70px;
     height: 70px;
 	border-radius: 50%;
@@ -197,13 +199,14 @@ body {
 	margin-left: -10px;
 }
 
+
+
 .like-button {
     width: 31px; 
     height: 27px;
     background: none;
     background-image: url("../like.png");
     background-size: cover;
-    border: none;
     transition: background-image 0.3s ease;
     cursor: pointer;
     border: none;
@@ -247,9 +250,10 @@ body {
 }
 .title-box {
     width: 500px;
+    /* display: flex; */
 }
 .title-box img {
-    width: 235px;
+    width: 280px;
     margin-bottom: -10px;
 }
 .title-box p {

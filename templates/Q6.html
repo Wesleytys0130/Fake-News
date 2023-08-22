@@ -1,81 +1,328 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>測測你的社群媒體 BGM</title>
-        <link rel="stylesheet" type="text/css" href="../public/css/rwd_v1.css"/>
-        <link rel="stylesheet" type="text/css" href="/public/css/rwd_v1.css"/>
-    </head>
+<head>
+    <meta charset="utf-8"/>
+    <title>測測你的社群媒體 BGM</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/ver2.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/css/ver2.css"/> 
+</head>
     <body>
+        <nav>
+			<div class="nav-left">
+				<img src="../public/img-ver2/logo.png" class="logo">
+				<ul>
+					<li>
+						<img src="../public/img-ver2/notification.png">
+					</li>
+					<li>
+						<img src="../public/img-ver2/inbox.png">
+					</li>
+					<li>
+						<img src="../public/img-ver2/video.png">
+					</li>
+				</ul>
+			</div>
+			<div class="nav-right">
+				<div class="search-box">
+					<img src="../public/img-ver2/search.png">
+					<input type="text" placeholder="Search">
+				</div>
+				<div class="nav-user-icon online" onclick="settingsMenuToggle();">
+					<img src="../public/img-ver2/profile-pic.png">
+				</div>
+			</div>
+
+			<div class="settings-menu">
+				<div id="dark-btn">
+					<span></span>
+				</div>
+				<div class="settings-menu-inner">
+					<div class="user-profile">
+						<img src="../public/img-ver2/profile-pic.png">
+						<div>
+							<p>John Nicholson</p>
+							<a href="#">See Your Profile</a>
+						</div>
+					</div>
+					<hr>
+					<div class="user-profile">
+						<img src="../public/img-ver2/feedback.png">
+						<div>
+							<p>Give Feedback</p>
+							<a href="#">Help us to improve the new design</a>
+						</div>
+					</div>
+					<hr>
+
+					<div class="settings-links">
+						<img src="../public/img-ver2/setting.png" class="settings-icon">
+						<a href="#">Settings & Privacy</a>
+						<img src="../public/img-ver2/arrow.png" width="10px">
+					</div>
+					<div class="settings-links">
+						<img src="../public/img-ver2/help.png" class="settings-icon">
+						<a href="#">Help & Support</a>
+						<img src="../public/img-ver2/arrow.png" width="10px">
+					</div>
+					<div class="settings-links">
+						<img src="../public/img-ver2/display.png" class="settings-icon">
+						<a href="#">Display & Accessibility</a>
+						<img src="../public/img-ver2/arrow.png" width="10px">
+					</div>
+					<div class="settings-links">
+						<img src="../public/img-ver2/logout.png" class="settings-icon">
+						<a href="#">Logout</a>
+						<img src="../public/img-ver2/arrow.png" width="10px">
+					</div>
+				</div>
+			</div>
+		</nav>
+
         <div class="container">
-            <div class="post-container">
-                <div class="post-row">
-                    <div class="user-profile">
-                        <img src="../public/spy.jpeg" alt="logo"/>
-                        <div>
-                            <p>網紅蛛</p>
-                            <span>Jun 21 2021, 3:40</span>
+			<div class="left-sidebar">
+				<div class="imp-links">
+					<a href="#">
+						<img src="../public/img-ver2/news.png">
+						Latest news
+					</a>
+					<a href="#">
+						<img src="../public/img-ver2/friends.png">
+						Friends
+					</a>
+					<a href="#">
+						<img src="../public/img-ver2/group.png">
+						Groups
+					</a>
+					<a href="#">
+						<img src="../public/img-ver2/marketplace.png">
+						Marketplace
+					</a>
+					<a href="#">
+						<img src="../public/img-ver2/watch.png">
+						Watch
+					</a>
+					<a href="#">
+						See More
+					</a>
+				</div>
+				<div class="shortcut-links">
+					<p>Your Shortcuts</p>
+					<a href="#">
+						<img src="../public/img-ver2/shortcut-1.png">
+						Web Developers
+					</a>
+					<a href="#">
+						<img src="../public/img-ver2/shortcut-2.png">
+						Web Design Course
+					</a>
+					<a href="#">
+						<img src="../public/img-ver2/shortcut-3.png">
+						Full Stact Development
+					</a>
+					<a href="#">
+						<img src="../public/img-ver2/shortcut-4.png">
+						Website Experts
+					</a>
+				</div>
+			</div>
+			<div class="main-content">
+				<!-- <div class="story-gallery">
+					<div class="story story1">
+						<img src="../public/img-ver2/upload.png">
+						<p>Post Story</p>
+					</div>
+					<div class="story story2">
+						<img src="../public/img-ver2/member-1.png">
+						<p>Alison</p>
+					</div>
+					<div class="story story3">
+						<img src="../public/img-ver2/member-2.png">
+						<p>Jackson</p>
+					</div>
+					<div class="story story4">
+						<img src="../public/img-ver2/member-3.png">
+						<p>Samona</p>
+					</div>
+					<div class="story story5">
+						<img src="../public/img-ver2/member-4.png">
+						<p>John</p>
+					</div>
+				</div> -->
+				<!-- <div class="write-post-container">
+					<div class="user-profile">
+						<img src="../public/img-ver2/profile-pic.png">
+						<div>
+							<p>John Nicholson</p>
+							<small>
+								Public
+								<i class="fas fa fa-caret-down"></i>
+							</small>
+						</div>
+					</div>
+					<div class="post-input-container">
+						<textarea rows="3" placeholder="What's on your mind, John?"></textarea>
+						<div class="add-post-links">
+							<a href="#">
+								<img src="../public/img-ver2/live-video.png">
+								Live Video
+							</a>
+							<a href="#">
+								<img src="../public/img-ver2/photo.png">
+								Photo/Video
+							</a>
+							<a href="#">
+								<img src="../public/img-ver2/feeling.png">
+								Feeling/Activity
+							</a>
+						</div>
+					</div>
+				</div> -->
+
+
+                <form action= "/end" method="POST">
+                    <div class="post-container">
+                        <div class="post-row">
+                            <div class="user-profile">
+                                <img src="../public/img/spider-monsters-inc.svg" alt="logo">
+                                <div>
+                                    <p>網紅</p>
+                                    <span>June 21 2021, 13:40</span>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <i class="fa fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                        
+                        <p class="post-text">
+                            震驚！！！<br>
+                            台灣人為賺錢，<br>
+                            害人不淺，真的會造罪業！<br>
+                            某知名紅茶攤的原物料違法添加人工香料香豆素，<br>
+                            難怪台灣洗腎患者全球第一，<br>
+                            肝不好！癌症攀升！<br>
+                        </p>
+
+                        <div class="post_options_v2">
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/like-blue.png">
+                                <div>讚</div>
+                            </div>
+                
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/comments.png">
+                                <div>留言</div>
+                            </div>
+                            <div class="post_option">
+                                <img class="post_options" src="../public/img-ver2/share.png">
+                                <div>分享</div>
+                            </div>
+                        </div>
+
+                        <div class="post_comments">
+                            <img src="../public/img/cow-monsters-inc.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">食品添加人工香精很夭壽</div>
+                            <!-- <input class="custom-radio-like" type="radio" name="Q6" value="A" required> -->
+                            <button class="like-button" type = "submit" name="Q6" value="A"></button>
+
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img/llama-monsters-inc.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">紅茶添加香豆素會造罪業</div>
+                            <!-- <input class="custom-radio-like" type="radio" name="Q6" value="B" > -->
+                            <button class="like-button" type = "submit" name="Q6" value="B"></button>
+
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img/bug-monsters-inc.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">台灣洗腎患者為全球第一</div>
+                            <!-- <input class="custom-radio-like" type="radio" name="Q6" value="C" > -->
+                            <button class="like-button" type = "submit" name="Q6" value="C"></button>
+
+                        </div>
+                        <div class="post_comments">
+                            <img src="../public/img/sulley-monsters-inc.svg" alt="logo" class="postimg"/>
+                            <div class="speech-bubble">肝不好會比較容易得癌症</div>
+                            <!-- <input class="custom-radio-like" type="radio" name="Q6" value="D" > -->
+                            <button class="like-button" type = "submit" name="Q6" value="D"></button>
                         </div>
                     </div>
-                    <a href="#">
-                        <i class="fa fa-ellipsis-v"></i>
-                    </a>
-                </div>
-                <p class="post-text">
-                    震驚！！！<br>
-                    台灣人為賺錢，<br>
-                    害人不淺，真的會造罪業！<br>
-                    某知名紅茶攤的原物料違法添加人工香料香豆素，<br>
-                    難怪台灣洗腎患者全球第一，<br>
-                    肝不好！癌症攀升！<br>
-                </p>
-                <div class="post_options_v2">
-                    <div class="post__option">
-                        <img src="../public/like-blue.png">
-                        <div>讚</div>
-                    </div>
-        
-                    <div class="post__option">
-                        <img src="../public/comments.png">
-                        <div>留言</div>
-                    </div>
-        
-                    <div class="post__option">
-                        <img src="../public/share.png">
-                        <div>分享</div>
-                    </div>
-                </div>
-                <form action= "/end" method="POST"> 
-                    <div class="post_comments">
-                        <img src="../public/1.png" alt="logo" class="post_img"/>
-                        <div class="speech-bubble">
-                            食品添加人工香精很夭壽
-                        </div>
-                        <button class="like-button" type = "submit" name="Q6" value="A"></button>
-                    </div>
-                    <div class="post_comments">
-                        <img src="../public/2.png" alt="logo" class="post_img"/>
-                        <div class="speech-bubble">
-                            紅茶添加香豆素會造罪業
-                        </div>
-                        <button class="like-button" type = "submit" name="Q6" value="B"></button>
-                    </div>
-                    <div class="post_comments">
-                        <img src="../public/3.png" alt="logo" class="post_img"/>
-                        <div class="speech-bubble">
-                            台灣洗腎患者為全球第一
-                        </div>
-                        <button class="like-button" type = "submit" name="Q6" value="C"></button>
-                    </div>
-                    <div class="post_comments">
-                        <img src="../public/4.png" alt="logo" class="post_img"/>
-                        <div class="speech-bubble">
-                            肝不好會比較容易得癌症
-                        </div>
-                        <button class="like-button" type = "submit" name="Q6" value="D"></button>
-                    </div>
+			
+                    <button type="button" class="load-more-btn">Load More</button>
+                    <!-- <input type="submit" value="提交"  class="load-more-btn"> -->
                 </form>
-            </div>
-        </div>
+            
+			</div>
+			<div class="right-sidebar">
+				<div class="sidebar-title">
+					<h4>Events</h4>
+					<a href="#">See All</a>
+				</div>
+				<div class="event">
+					<div class="left-event">
+						<h3>18</h3>
+						<span>March</span>
+					</div>
+					<div class="right-event">
+						<h4>Social Media</h4>
+						<p>
+							<i class="fa fa-map-marker"></i>
+							Willson Tech Park
+						</p>
+						<a href="#">More Info</a>
+					</div>
+				</div>
+				<div class="event">
+					<div class="left-event">
+						<h3>22</h3>
+						<span>June</span>
+					</div>
+					<div class="right-event">
+						<h4>Mobile Marketing</h4>
+						<p>
+							<i class="fa fa-map-marker"></i>
+							Willson Tech Park
+						</p>
+						<a href="#">More Info</a>
+					</div>
+				</div>
+
+				<div class="sidebar-title">
+					<h4>Advertisement</h4>
+					<a href="#">Close</a>
+				</div>
+				<img src="../public/img-ver2/advertisement.png" class="sidebar-ads">
+
+				<div class="sidebar-title">
+					<h4>Conversation</h4>
+					<a href="#">Hide Chat</a>
+				</div>
+				<div class="online-list">
+					<div class="online">
+						<img src="../public/img-ver2/member-1.png">
+					</div>
+					<p>Alison Mina</p>
+				</div>
+				<div class="online-list">
+					<div class="online">
+						<img src="../public/img-ver2/member-2.png">
+					</div>
+					<p>Jackson Aston</p>
+				</div>
+				<div class="online-list">
+					<div class="online">
+						<img src="../public/img-ver2/member-3.png">
+					</div>
+					<p>Samona Rose</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<p>Copyright 2021 - Lets Try This YouTube Channel</p>
+		</div>
+        
     </body>
 </html>
+
+
