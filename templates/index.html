@@ -19,8 +19,16 @@
 
             <div class="form-box">
                 <form action= "/Q-ALL" method="POST">
-                    <input type="text" name="user" placeholder="輸入姓名"/>
-                    <input type="int" placeholder="輸入年齡">
+                    <input type="number" name="age" placeholder="輸入年齡" min="0" max="100"/>
+                    <!-- <input type="text" name="sex" placeholder="輸入性別">    -->
+                    <input type="text" id="gender" name="gender" list="gender-options" placeholder="輸入性別">
+        
+                    <datalist id="gender-options">
+                        <option value="男性">
+                        <option value="女性">
+                        <option value="其他">
+                    </datalist>
+
                     <button type="submit" >登錄</button>
                 </form>
                 <a href="#">忘記密碼</a>

@@ -26,30 +26,51 @@ def index():
 
 @app.route("/Q-ALL",methods = ["POST"] )
 def getdata():
-    user = request.form['user']
-    session["user"] = user
-    print(session["user"])
+    # user = request.form['user']
+    # session["user"] = user
+    # print(session["user"])
 
     return render_template("Q-ALL.html")
 
 @app.route("/end-ALL",methods = ["POST"] )
 def endALL():
-    Q1_ans = request.form['Q1']
-    Q2_ans = request.form['Q2']
-    Q3_ans = request.form['Q3']
-    Q4_ans = request.form['Q4']
-    Q5_ans = request.form['Q5']
-    Q6_ans = request.form['Q6']
-    session["Q1"] = Q1_ans
-    session["Q2"] = Q2_ans
-    session["Q3"] = Q3_ans
-    session["Q4"] = Q4_ans
-    session["Q5"] = Q5_ans
-    session["Q6"] = Q6_ans
-    all_ans = [session[f'Q{i}']for i in range(1,7)]
-    user = session["user"]
+    all_ans = [request.form[f"Q{i}"] for i in range(1,7)]
+    correct = ["C", "B", "B", "B", "C", "A"]
+    # user = session["user"]
 
-    return render_template("end.html",data = all_ans, usr = session["user"] )
+    Logo = 0
+    Etho = 0
+    Patho = 0
+    for cor, ans, count in zip(correct, all_ans, range(1,7)):
+        if count == 1 or count == 2:
+            if cor != ans:
+                Logo += 1
+            else:
+                continue
+        elif count == 3 or count == 4:
+            if cor != ans:
+                Etho += 1
+            else:
+                continue
+        elif count == 5 or count == 6:
+            if cor != ans:
+                Patho += 1
+            else:
+                continue
+
+    if Logo == 0 and Etho == 0 and Patho == 0:
+        session['music_type'] = 'Blues, Jazz, Soft Rock'
+    elif Logo == 0:
+        session['music_type'] = 'Country Music, Classical Music, Folk Music'
+    elif Etho == 0:
+        session['music_type'] = 'Heavy Metal Music'
+    elif Patho == 0:
+        session['music_type'] = 'Buddhist Scriptures, Singing Bowl Sounds'
+    else:
+        session['music_type'] = 'Ballad Songs, Pop Songs'
+    print(session['music_type'])
+
+    return render_template("end.html")
 
 
 @app.route("/Q1",methods = ["POST"])

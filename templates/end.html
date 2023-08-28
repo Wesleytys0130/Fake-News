@@ -2,16 +2,255 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>心理測驗</title>
+        <title>測測你的社群媒體 BGM</title>
+        <link rel="stylesheet" type="text/css" href="../public/css/ver2.css"/>
+        <link rel="stylesheet" type="text/css" href="/public/css/ver2.css"/> 
     </head>
     <body>
-        <div>
-            <h3>
-                嗨  {{ usr }}  你的測驗已結束
-            </h3>
-            <div>
-                你的答案  {{ data }}
+            <nav>
+                <div class="nav-left">
+                    <img src="../public/img-ver2/logo.png" class="logo">
+                    <ul>
+                        <li>
+                            <img src="../public/img-ver2/notification.png">
+                        </li>
+                        <li>
+                            <img src="../public/img-ver2/inbox.png">
+                        </li>
+                        <li>
+                            <img src="../public/img-ver2/video.png">
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-right">
+                    <div class="search-box">
+                        <img src="../public/img-ver2/search.png">
+                        <input type="text" placeholder="搜尋">
+                    </div>
+                    <div class="nav-user-icon online" onclick="settingsMenuToggle();">
+                        <img src="../public/img-post/6.png">
+                    </div>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="left-sidebar">
+                    <div class="imp-links">
+                        <a href="#">
+                            <img src="../public/img-ver2/friends.png">
+                            朋友
+                        </a>
+                        <a href="#">
+                            <img src="../public/img-ver2/group.png">
+                            社團
+                        </a>
+                        <a href="#">
+                            <img src="../public/img-ver2/watch.png">
+                            影片
+                        </a>
+                        <a href="#">
+                            <img src="../public/img-ver2/marketplace.png">
+                            Marketplace
+                        </a>
+                        <a href="#">
+                            <img src="../public/img-ver2/news.png">
+                            動態消息
+                        </a>
+                        <a href="#">
+                            顯示更多
+                        </a>
+                    </div>
+                    <div class="shortcut-links">
+                        <p>你的捷徑</p>
+                        <a href="#">
+                            <img src="../public/img-post/whistleblower-house.svg">
+                            爆料公社
+                        </a>
+                        <a href="#">
+                            <img src="../public/img-post/potato-map.svg">
+                            我是台灣人
+                        </a>
+                        <a href="#">
+                            <img src="../public/img-post/sidewalk.svg">
+                            路上觀察學院
+                        </a>
+                        <a href="#">
+                            <img src="../public/img-post/hypermarket.svg">
+                            好市多商品經驗老實說
+                        </a>
+                    </div>
+                </div>
+                <div class="main-content">
+                    <div class="result-container">
+
+                        {% if session.music_type == 'Blues, Jazz, Soft Rock' %}
+                            <div>
+                                你的性格類型是：
+                            </div>
+                            <p>
+                                理性巡航者
+                            </p>
+                            <img src="../public/result/blues-jazz-soft-rock.png">
+
+                            <div>
+                                音樂類型：
+                            </div>
+                            <p>
+                                藍調、爵士、軟性搖滾
+                            </p>
+                            <div>
+                                你對事物常抱持懷疑態度且追求理性思考，你探索世界的各個角落，穿梭於現實和社群媒體中，並以你的思考方式為其注入獨到的見解和風格。
+                            </div>
+                        
+                        {% elif session.music_type == 'Country Music, Classical Music, Folk Music' %}
+                            <div>
+                                你的性格類型是：
+                            </div>
+                            <p>
+                                情感親善大使
+                            </p>
+                            <img src="../public/result/country-music-classical-music-folk-music.png">
+
+                            <div>
+                                音樂類型：
+                            </div>
+                            <p>
+                                鄉村音樂、古典樂、民謠
+                            </p>
+                            <div>
+                                你用有邏輯且結構性強的方式與他人交流，讓大家在社群媒體中與你互動時都能感受滿滿的真誠和舒適感。
+                            </div>
+                        
+                        {% elif session.music_type == 'Heavy Metal Music' %}
+                            <div>
+                                你的性格類型是：
+                            </div>
+                            <p>
+                                火爆浪子
+                            </p>
+                            <img src="../public/result/rock-alternative-heavy-metal-music.png">
+
+                            <div>
+                                音樂類型：
+                            </div>
+                            <p>
+                                重金屬
+                            </p>
+                            <div>
+                                你對事物抱有天生的質疑，在社群媒體中我行我素，發展出一套獨特看待世界的方式。
+                            </div>
+                        
+                        {% elif session.music_type == 'Buddhist Scriptures, Singing Bowl Sounds' %}
+                            <div>
+                                你的性格類型是：
+                            </div>
+                            <p>
+                                遁隱山林的出世者
+                            </p>
+                            <img src="../public/result/buddhist-scriptures--singing-bowl-sounds.png">
+
+                            <div>
+                                音樂類型：
+                            </div>
+                            <p>
+                                佛經、頌缽聲
+                            </p>
+                            <div>
+                                你以冷靜的方式對生命和世俗事務進行深入的思考和探究，紅塵俗事已不再是你的牽絆。
+                            </div>
+                            
+
+                        {% elif session.music_type == 'Ballad Songs, Pop Songs' %}
+                            <div>
+                                你的性格類型是：
+                            </div>
+                            <p>
+                                全能創作才子
+                            </p>
+                            <img src="../public/result/ballad-songs-pop-songs.png">
+
+                            <div>
+                                音樂類型：
+                            </div>
+                            <p>
+                                抒情歌、流行歌
+                            </p>
+                            <div>
+                                你樂意接受來自各方的想法與建議，並揉合多元觀點進行創作，在社群媒體中有一片自己的天地。
+                            </div>
+                        
+                        {% endif %}
+
+                    
+                    </div >
+                </div>
+
+
+                <div class="right-sidebar">
+                    <div class="sidebar-title">
+                        <h4>活動</h4>
+                        <a href="#">顯示更多</a>
+                    </div>
+                    <div class="event">
+                        <div class="left-event">
+                            <h3>18</h3>
+                            <span>八月</span>
+                        </div>
+                        <div class="right-event">
+                            <h4>河堤野餐日</h4>
+                            <p>
+                                <i class="fa fa-map-marker"></i>
+                                河濱公園
+                            </p>
+                            <a href="#">更多資訊</a>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="left-event">
+                            <h3>22</h3>
+                            <span>十月</span>
+                        </div>
+                        <div class="right-event">
+                            <h4>演唱會</h4>
+                            <p>
+                                <i class="fa fa-map-marker"></i>
+                                台北小巨蛋
+                            </p>
+                            <a href="#">更多資訊</a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-title">
+                        <h4>廣告</h4>
+                        <a href="#">隱藏廣告</a>
+                    </div>
+                    <img src="../public/img-post/a-women-drinking-coffee-in-the-office.svg" class="sidebar-ads">
+
+                    <div class="sidebar-title">
+                        <h4>聯絡人</h4>
+                        <a href="#">隱藏聊天室</a>
+                    </div>
+                    <div class="online-list">
+                        <div class="online">
+                            <img src="../public/img-post/7.svg">
+                        </div>
+                        <p>陳雅婷</p>
+                    </div>
+                    <div class="online-list">
+                        <div class="online">
+                            <img src="../public/img-post/8.svg">
+                        </div>
+                        <p>李承恩</p>
+                    </div>
+                    <div class="online-list">
+                        <div class="online">
+                            <img src="../public/img-post/9.svg">
+                        </div>
+                        <p>林冠宇</p>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div class="footer">
+                <p> 隱私政策  · 服務條款  · 廣告  · Ad Choices   · Cookie </p>
+            </div>
     </body>
 </html>
