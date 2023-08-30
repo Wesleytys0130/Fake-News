@@ -257,19 +257,19 @@ nav{
 	font-size: 14px;
 }
 .story1{
-	background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(../img-ver2/status-1.png);
+	background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(../img/status-1.png);
 }
 .story2{
-	background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(../img-ver2/status-2.png);
+	background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(../img/status-2.png);
 }
 .story3{
-	background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(../img-ver2/status-3.png);
+	background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(../img/status-3.png);
 }
 .story4{
-	background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(../img-ver2/status-4.png);
+	background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(../img/status-4.png);
 }
 .story5{
-	background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(../img-ver2/status-5.png);
+	background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(../img/status-5.png);
 }
 .story.story1 img{
 	top:unset;
@@ -574,26 +574,26 @@ nav{
     display: inline-block;
     width: 31px; 
     height: 27px;
-    background:  url("../img-ver2/like.png") no-repeat center;
+    background:  url("../img/like.png") no-repeat center;
     background-size: cover;
     cursor: pointer;
     margin-left:30px;
 }
 
 .custom-a-like :hover{
-    background-image: url("../img-ver2/like-blue.png"); /* 选中时的图像 */
+    background-image: url("../img/like-blue.png"); /* 选中时的图像 */
 }
 
 
 .custom-radio-like:checked {
-    background-image: url("../img-ver2/like-blue.png"); /* 选中时的图像 */
+    background-image: url("../img/like-blue.png"); /* 选中时的图像 */
 }
 
 .like-button {
     width: 31px; 
     height: 27px;
     background: none;
-    background-image: url("../img-ver2/like.png");
+    background-image: url("../img/like.png");
     background-size: cover;
     transition: background-image 0.3s ease;
     cursor: pointer;
@@ -602,7 +602,7 @@ nav{
     margin-left:30px;
 }
 .like-button:hover {
-    background-image: url("../img-ver2/like-blue.png");
+    background-image: url("../img/like-blue.png");
 }
 
 
